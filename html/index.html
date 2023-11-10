@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            background-color: #eaeaea;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        #topbar {
+            background-color: #394b58;
+            margin-top: 0;
+            top: 0;
+            position: fixed;
+            right: 0;
+            left: 0;
+            height: 56px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .box {
+            justify-content: center;
+            display: flex;
+            margin-top: 50px;
+        }
+
+        .box-content {
+            display: block;
+            padding-top: 5px;
+            background-color: #ffffff;
+            width: 280px;
+            border-radius: 6px;
+            -webkit-box-shadow: 1px 1px 3px grey;
+            -moz-box-shadow: 1px 1px 3px grey;
+            box-shadow: 1px 1px 3px grey;
+            height: 240px;
+        }
+
+        .logo {
+            height: auto;
+            width: 130px;
+            padding: 16px;
+        }
+
+        .text {
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input {
+            padding: 13px;
+            width: 170px;
+            height: 16px;
+            border-radius: 3px;
+            border: 1px solid #c7cdd2;
+            font-size: 16px;
+        }
+
+        input:active {
+            outline:#0374b5;
+        }
+
+        ::placeholder {
+            color: grey;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            color: white;
+            background-color: #0374b5;
+            padding: 13px;
+            border: none;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 200px;
+            height: 45px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        button:hover {
+            cursor: wait;
+            background-color: #027fcb;
+        }
+    </style>
+</head>
+<body>
+    <div id="topbar"><center><img draggable="false" src="logo.png" class="logo" onclick="aboutBlank()"/></center></div>
+    <br /> <br />
+    <div class="box">
+        <div class="box-content"><br>
+        <p class="text">Enter Test ID</p>
+        <input type="text" placeholder="Test ID"><br /><br /><br />
+        <button class="next"><b>NEXT</b></button>
+        </div>
+    </div>
+    <!--
+    <script>
+function aboutBlank() {
+      var url = "https://masteryconnect.com/courses.html";
+      var win = window.open();
+      win.document.body.style.margin = "0";
+      win.document.body.style.height = "100vh";
+      var iframe = win.document.createElement("iframe");
+      iframe.style.border = "none";
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
+      iframe.style.margin = "0";
+      iframe.referrerpolicy = "no-referrer";
+      iframe.allow = "fullscreen";
+      iframe.src = url;
+      win.document.body.appendChild(iframe);
+
+      window.location.href = "https://www.google.com";
+    }
+    </script>-->
+    <script>
+        function aboutBlank() {
+    const tab = window.open('about:blank', '_blank');
+    const iframe = tab.document.createElement('iframe');
+    const stl = iframe.style;
+    stl.border = stl.outline = 'none';
+    stl.width = '100vw';
+    stl.height = '100vh';
+    stl.position = 'fixed';
+    stl.left = stl.right = stl.top = stl.bottom = '0';
+    iframe.src = '/courses.html';
+    tab.document.body.appendChild(iframe);
+    window.parent.window.location.replace(localStorage.getItem("panicurl") || 'https://google.com')
+}
+
+if (window.self !== window.self) document.querySelector("#launchab").style.display = "none"
+    </script>
+</body>
+</html>
